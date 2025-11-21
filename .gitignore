@@ -1,0 +1,95 @@
+# ============================
+# C++ / CMake CAD Project
+# ============================
+
+# --- Build directories ---
+build/
+cmake-build-*/
+out/
+bin/
+lib/
+dist/
+
+# --- Compiled Object Files ---
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.so
+*.dll
+*.lib
+*.dylib
+
+# --- CMake files ---
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+
+# Ninja builds
+.ninja_log
+.ninja_deps
+
+# Generated config
+compile_commands.json
+
+# --- Qt Specific ---
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qmlc
+*.jsc
+*.moc
+*.qmake.stash
+
+# Qt Creator local files
+*.pro.user
+*.pri.user
+*.qbs.user
+*.qmlproject.user
+*.qmlproject.user.*
+
+# Resource cache
+.rcc/
+
+# --- VS Code ---
+.vscode/
+.history/
+*.code-workspace
+
+# --- Logs & temporary files ---
+*.log
+*.tmp
+*.swp
+*.swo
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Python (if using pybind11 or scripting) ---
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# --- CLang / GCC files ---
+*.d
+*.gcda
+*.gcno
+*.gcov
+
+# --- Testing Tools ---
+*.tlog
+*.pdb
+*.ipdb
+*.gcda
+*.gcno
+
+# --- Misc ---
+*.autosave
+*.bak
+*.old
