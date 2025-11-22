@@ -1,18 +1,14 @@
-#include <QApplication>
-#include <QMainWindow>
-#include <QLabel>
+#include <iostream>
+#include "core/modeling/BRepBuilder.h"
 
-int main(int argc, char *argv[]){
-    QApplication app(argc, argv);
+int main() {
+    Shape box = BRepBuilder::makeBox(100, 200, 300);
 
-    QMainWindow window;
-    window.setWindowTitle("CAD3d - Prototype");
-    auto *label = new QLabel("Hello CAD world!");
-    label->setAlignment(Qt::AlignCenter);
-    window.setCentralWidget(label);
-    window.resize(800,600);
-    window.show();
+    if (!box.isNull()) {
+        std::cout << "Box successfully created!" << std::endl;
+    } else {
+        std::cout << "Error creating shape." << std::endl;
+    }
 
-    return app.exec();
-
+    return 0;
 }

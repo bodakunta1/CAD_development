@@ -1,26 +1,33 @@
 cmake_minimum_required(VERSION 3.16)
-PROJECT(cad3d LANGUAGES CXX)
+project(CAD3D)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
 
-#Options for dev
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+find_package(OpenCASCADE REQUIRED)
 
-#Find Qt & OpenGL
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package(OpenGL REQUIRED)
+include_directories(${OpenCASCADE_INCLUDE_DIR})
 
-add_executable(
-    cad3d
+add_executable(cad3d
     src/main.cpp
 )
 
-target_include_directories(cad3d PRIVATE include)
-
-target_link_libraries(
-    cad3d
-    Qt5::Widgets
-    OpenGL::GL
+target_link_libraries(cad3d
+    PRIVATE
+    TKernel
+    TKMath
+    TKG2d
+    TKG3d
+    TKIGES
+    TKSTEP
+    TKBRep
+    TKGeomBase
+    TKGeomAlgo
+    TKTopAlgo
+    TKPrim
+    TKShHealing
+    TKBool
+    TKBO
+    TKOffset
+    TKFillet
+    TKMesh
 )
-
